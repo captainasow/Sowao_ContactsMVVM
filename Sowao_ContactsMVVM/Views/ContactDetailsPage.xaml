@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Sowao_ContactsMVVM.ViewModels"
+             x:Class="Sowao_ContactListMVVM.ContactDetailsPage"
+             Title="ContactDetailsPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Entry x:Name="nameEntry" Text="{Binding SelectedContact.Name}" IsEnabled="False" />
+            <Entry x:Name="emailEntry" Text="{Binding SelectedContact.Email}" IsEnabled="False" />
+            <Entry x:Name="phoneEntry" Text="{Binding SelectedContact.PhoneNumber}" IsEnabled="False" />
+            <Editor x:Name="descriptionEditor" Text="{Binding SelectedContact.Description}" HeightRequest="100" IsEnabled="False" />
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Edit" Clicked="OnEditClicked" />
+                <Button Text="Save" Clicked="OnSaveClicked" />
+                <Button Text="Back" Clicked="OnBackClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

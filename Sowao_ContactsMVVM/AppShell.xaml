@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Sowao_ContactsMVVM.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Sowao_ContactsMVVM"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Sowao_ContactsMVVM">
+
+    <ShellContent Title="Add Contact" ContentTemplate="{DataTemplate local:Views/MainPage}" />
+    <ShellContent Title="Contacts" ContentTemplate="{DataTemplate local:Views/ContactsPage}" />
+    <ShellContent Title="Details" ContentTemplate="{DataTemplate local:Views/ContactDetailsPage}" />
+
+</Shell>
