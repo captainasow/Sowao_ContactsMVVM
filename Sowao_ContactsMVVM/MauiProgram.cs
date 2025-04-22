@@ -1,29 +1,35 @@
-﻿using Sowao_ContactsMVVM.ViewModels;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Sowao_ContactsMVVM;
+// Alias namespaces to prevent ambiguity
+using Views = Sowao_ContactsMVVM.Views;
+using ViewModels = Sowao_ContactsMVVM.ViewModels;
 
-public static class MauiProgram
+namespace Sowao_ContactsMVVM
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
 
-#if DEBUG
-		builder.Logging.AddDebug();
-#endif
-			builder.Services.AddSingleton<ContactsViewModel>();
-            builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<ContactsPage>();
-            builder.Services.AddSingleton<ContactDetailsPage>();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
 
-			return builder.Build();
-	}
+            // Register ViewModels
+            builder.Services.AddSingleton<ViewModels.ContactsViewModel>();
+
+            // Register Pages
+            builder.Services.AddSingleton<Views.MainPage>();
+            builder.Services.AddSingleton<Views.ContactsPage>();
+            builder.Services.AddSingleton<Views.ContactsDetailPage>();
+
+            return builder.Build();
+        }
+    }
 }

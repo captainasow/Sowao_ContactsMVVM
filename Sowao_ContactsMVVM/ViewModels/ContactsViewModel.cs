@@ -1,43 +1,50 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Contact = Sowao_ContactsMVVM.Models.Contact;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
+using Microsoft.Maui.Controls;
+using Sowao_ContactsMVVM.Models;
 
-namespace Sowoa_ContactsMVVM.ViewModels
+namespace Sowao_ContactsMVVM.ViewModels
 {
-    public partial class ContactViewModel : ObservableObject
+    public class ContactsViewModel
     {
-        [ObservableProperty]
+        public ObservableCollection<AppContact> Contacts { get; set; }
+        public ICommand AddContactCommand { get; }
+        public ICommand UpdateContactCommand { get; }
+        public ICommand SelectContactCommand { get; }  // Add SelectContactCommand
 
-        private ObservableCollection<Contact> contacts = new();
-
-        [ObservableProperty]
-
-        private Contact selectedContact;
-        
-        [RelayCommand]
-
-        private async Task AddContact(Contact contact)
+        public ContactsViewModel()
         {
-            Contacts.Add(item: contact);
-            await Shell.Current.GoToAsync(nameof(ContactsPage));
-
+            Contacts = new ObservableCollection<AppContact>();
+            AddContactCommand = new Command<AppContact>((contact) => AddContact(contact));
+            UpdateContactCommand = new Command<AppContact>((updatedContact) => UpdateContact(updatedContact));
+            SelectContactCommand = new Command<AppContact>((contact) => SelectContact(contact));  // Implement the command
         }
 
-        [RelayCommand]
-        private async Task SelectContact(Contact contact)
+        private void AddContact(AppContact contact)
         {
-            SelectedContact = contact;
-            await Shell.Current.GoToAsync(nameof(ContactDetailsPage));
+            Contacts.Add(contact);
         }
 
-        [RelayCommand]
-        private void UpdateContact(Contact updatedContact)
+        private void UpdateContact(AppContact updatedContact)
         {
-            var index = Contacts.IndexOf(SelectedContact);
-            if (index >= 0)
+            var contact = Contacts.FirstOrDefault(c => c.Name == updatedContact.Name);
+            if (contact != null)
             {
-                Contacts[index] = updatedContact;
+                contact.Name = updatedContact.Name;
+                contact.Email = updatedContact.Email;
+                contact.PhoneNumber = updatedContact.PhoneNumber;
+                contact.Description = updatedContact.Description;
+            }
+        }
+
+        // Define what happens when a contact is selected
+        private void SelectContact(AppContact contact)
+        {
+            if (contact != null)
+            {
+                // Logic when a contact is selected (e.g., update a detail view, navigate, etc.)
+                // Example logic can be added here
             }
         }
     }

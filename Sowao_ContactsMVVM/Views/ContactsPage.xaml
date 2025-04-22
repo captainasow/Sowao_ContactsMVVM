@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Sowao_ContactsMVVM.ViewModels"
-             x:Class="Sowao_ContactListMVVM.ContactsPage"
+             x:Class="Sowao_ContactsMVVM.Views.ContactsPage"
              Title="ContactsPage">
     <VerticalStackLayout Padding="10">
         <CollectionView ItemsSource="{Binding Contacts}"
@@ -13,7 +13,7 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnContactSelected" />
                         </Frame.GestureRecognizers>
-                        <StackLayout>
+                        <StackLayout Padding="10" Orientation="Vertical">
                             <Label Text="{Binding Name}" FontAttributes="Bold" />
                             <Label Text="{Binding Email}" FontSize="Small" />
                         </StackLayout>

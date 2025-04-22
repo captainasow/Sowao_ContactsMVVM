@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="Sowao_ContactsMVVM.app/Contents/MacOS/Sowao_ContactsMVVM">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>Sowao_ContactsMVVM.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>Sowao_ContactsMVVM.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>Sowao_ContactsMVVM.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

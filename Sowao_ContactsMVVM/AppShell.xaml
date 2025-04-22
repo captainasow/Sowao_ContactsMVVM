@@ -4,11 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Sowao_ContactsMVVM"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:views="clr-namespace:Sowao_ContactsMVVM.Views"
     Title="Sowao_ContactsMVVM">
 
-    <ShellContent Title="Add Contact" ContentTemplate="{DataTemplate local:Views/MainPage}" />
-    <ShellContent Title="Contacts" ContentTemplate="{DataTemplate local:Views/ContactsPage}" />
-    <ShellContent Title="Details" ContentTemplate="{DataTemplate local:Views/ContactDetailsPage}" />
+<ShellContent Title="Add Contact" ContentTemplate="{DataTemplate views:MainPage}" Route="MainPage" />
+<ShellContent Title="Contacts" ContentTemplate="{DataTemplate views:ContactsPage}" Route="ContactsPage" />
+<ShellContent Title="Details" ContentTemplate="{DataTemplate views:ContactsDetailPage}" Route="ContactsDetailPage"/>
+
 
 </Shell>

@@ -1,13 +1,13 @@
-﻿namespace Sowao_ContactsMVVM;
+﻿using Sowao_ContactsMVVM.Views; // Ensure this is added to use ContactsPage and ContactsDetailPage
+using Microsoft.Maui.Controls;
 
-public partial class AppShell : Shell
+namespace Sowao_ContactsMVVM
 {
-	public AppShell()
-	{
-		InitializeComponent();
-
-		Routing.RegisterRoute("Views/ContactsPage", typeof(Views.ContactsPage));
-        Routing.RegisterRoute("Views/MainPage", typeof(Views.MainPage));
-        Routing.RegisterRoute("Views/ContactDetailsPage", typeof(Views.ContactDetailsPage));
-	}
+    public partial class AppShell : Shell
+    {
+        public AppShell()
+        {
+            InitializeComponent(); // Ensure this exists and is linked to your XAML file
+        }
+    }
 }

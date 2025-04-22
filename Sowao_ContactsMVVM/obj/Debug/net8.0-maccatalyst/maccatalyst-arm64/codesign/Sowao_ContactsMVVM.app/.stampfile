@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/Sowao_ContactsMVVM.app

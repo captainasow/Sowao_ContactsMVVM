@@ -45,11 +45,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = Sowao_ContactsMVVM.Resourc
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
 
-[/Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/Views/ContactDetailsPage.xaml]
+[/Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/Views/ContactsDetailPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Sowao_ContactsMVVM.Views.ContactDetailsPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views/ContactDetailsPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views/ContactDetailsPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Sowao_ContactsMVVM.Views.ContactsDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ContactsDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ContactsDetailPage.xaml
 
 [/Users/abdoulsow/Sowao_ContactsMVVM/Sowao_ContactsMVVM/Views/ContactsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
